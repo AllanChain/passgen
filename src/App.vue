@@ -3,6 +3,7 @@
     <StyledInput
       v-model:value="phrase"
       label="Phrase"
+      type="password"
       placeholder="Your meta password..."
     />
     <StyledInput

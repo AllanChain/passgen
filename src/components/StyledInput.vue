@@ -6,7 +6,7 @@
     <div class="flex-1">
       <input
         class="w-full border px-4 py-2 rounded-r focus:border-blue-500 focus:shadow-outline outline-none"
-        type="text"
+        :type="type"
         :placeholder="placeholder"
         :value="value"
         @input="$emit('update:value', $event.target.value)"
@@ -21,6 +21,10 @@ export default {
     label: {
       type: String,
       required: true
+    },
+    type: {
+      type: String,
+      default: 'text'
     },
     placeholder: {
       type: String,
