@@ -1,26 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <input type="password" v-model="phrase" />
+  <input v-model="service" />
+  <button @click="generate">Go</button>
+  <div>{{ password }}</div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { ref } from 'vue'
+import Vault from 'vault'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+export const phrase = ref('')
+export const service = ref('')
+export const password = ref('')
+
+export const generate = () => {
+  password.value = new Vault({ phrase: phrase.value }).generate(service.value)
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
