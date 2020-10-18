@@ -8,6 +8,8 @@
         class="w-full border px-4 py-2 rounded-r focus:border-blue-500 focus:shadow-outline outline-none"
         type="text"
         :placeholder="placeholder"
+        :value="value"
+        @input="$emit('update:value', $event.target.value)"
       >
     </div>
   </div>
@@ -23,8 +25,15 @@ export default {
     placeholder: {
       type: String,
       required: true
+    },
+    value: {
+      type: String,
+      required: true
     }
-  }
+  },
+  emits: [
+    'update:value'
+  ]
 }
 </script>
 
