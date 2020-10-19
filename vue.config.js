@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: process.env.PUB_PATH || '/',
   css: {
     loaderOptions: {
       postcss: {
