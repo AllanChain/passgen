@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/passgen/precache-manifest.b5a9b6fb321d549b5617678f22285243.js"
+  "/passgen/precache-manifest.8e621bbe05b6c87c4eba898c9c86babd.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "passgen"});
